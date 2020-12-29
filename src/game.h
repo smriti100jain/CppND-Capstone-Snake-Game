@@ -27,8 +27,7 @@ class Game {
   Snake snake;
   wall_obstacle wall;// = std::make_unique<Wall>();
   FoodObj food_;
-  //FoodObj silver_;
-  //std::vector<std::unique_ptr<FoodObj>> _foods;
+  std::vector<std::unique_ptr<FoodObj>> _foods;
   bool running = true;
   int moves {0};
   int score{0};

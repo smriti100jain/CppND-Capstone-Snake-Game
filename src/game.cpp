@@ -4,7 +4,10 @@
 
 Game::Game(std::size_t grid_width, std::size_t grid_height, int difficulty)
     : snake(grid_width, grid_height),
-      wall(grid_width, grid_height, difficulty),food_(grid_width, grid_height, 1){
+      wall(grid_width, grid_height, difficulty){
+        _foods.emplace_back(std::make_unique<FoodObj>(grid_width, grid_height, 4));
+        _foods.emplace_back(std::make_unique<FoodObj>(grid_width, grid_height, 1));
+
 }
 
 Game::~Game(){};
@@ -21,6 +24,9 @@ void Game::Run(Controller  &controller, Renderer &renderer,
   //initiate threads to simulate game objects (wall obstacle and food)
   wall.simulate();  
   food_.simulate(snake.body);
+  for (auto it = std::begin(_foods); it != std::end(_foods); ++it){
+    (*it)->simulate(snake.body);
+  }
   
 
   while (running) {
@@ -32,7 +38,7 @@ void Game::Run(Controller  &controller, Renderer &renderer,
     controller.HandleInput(running, snake);
     moves = controller.GetKeyMove();
     Update();
-    renderer.Render(snake, food_.get_game_object(), wall.get_game_object());
+    renderer.Render(snake, _foods[0]->get_game_object(), _foods[1]->get_game_object(), wall.get_game_object());
 
     frame_end = SDL_GetTicks();
 
@@ -94,19 +100,23 @@ void Game::Update() {
     int new_y = static_cast<int>(snake.head_y);
 
   	// Check if there's food over here
-    int eaten = 0;
-    for (auto const &food : food_.get_game_object()){
-      if (food.x == new_x && food.y == new_y) {
-        eaten +=1;
-      }}
- 	if(eaten>0){
-  		food_.simulate(snake.body);
-  	}
-    for(auto i=0; i<eaten;i++){
-        // Grow snake and increase speed for every eaten food.
-        snake.GrowBody();
-        snake.speed += 0.02;
-      }
+  	for (auto it = std::begin(_foods); it != std::end(_foods); ++it){
+    
+        int eaten = 0;
+        for (auto const &food : (*it)->get_game_object()){
+          if (food.x == new_x && food.y == new_y) {
+            eaten +=1;
+          }}
+        if(eaten>0){
+            (*it)->simulate(snake.body);
+        }
+        for(auto i=0; i<eaten;i++){
+            // Grow snake and increase speed for every eaten food.
+            snake.GrowBody();
+            snake.speed += 0.02;
+          }
+      
+  }
 }
 
 int Game::GetScore() const { return score; }

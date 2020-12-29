@@ -38,7 +38,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food, std::vector<SDL_Point> const wall) {
+void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food1,std::vector<SDL_Point> const food2, std::vector<SDL_Point> const wall) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -59,11 +59,20 @@ void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food, std:
     SDL_RenderFillRect(sdl_renderer, &block);
 }
 
-  // Render silver
+  // Render food1
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-   for (int i = 0; i < food.size(); i++) {
-    block.x = food[i].x * block.w;
-    block.y = food[i].y * block.h;
+   for (int i = 0; i < food1.size(); i++) {
+    block.x = food1[i].x * block.w;
+    block.y = food1[i].y * block.h;
+      //std::cout << "Wall x: " << block.x <<"\n";
+      //std::cout << "Wall y: " << block.y <<"\n";
+    SDL_RenderFillRect(sdl_renderer, &block);
+}
+  // Render food2
+  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0x00, 0xFF);
+   for (int i = 0; i < food2.size(); i++) {
+    block.x = food2[i].x * block.w;
+    block.y = food2[i].y * block.h;
       //std::cout << "Wall x: " << block.x <<"\n";
       //std::cout << "Wall y: " << block.y <<"\n";
     SDL_RenderFillRect(sdl_renderer, &block);
