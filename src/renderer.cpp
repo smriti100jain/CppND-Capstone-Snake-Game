@@ -37,7 +37,6 @@ Renderer::~Renderer() {
   SDL_DestroyWindow(sdl_window);
   SDL_Quit();
 }
-
 void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food1,std::vector<SDL_Point> const food2, std::vector<SDL_Point> const wall) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
@@ -45,40 +44,32 @@ void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food1,std:
 
 
   // Clear screen
-  SDL_SetRenderDrawColor(sdl_renderer, 0x1E, 0x1E, 0x1E, 0xFF);
+  SDL_SetRenderDrawColor(sdl_renderer, 0, 0, 0, 255);
   SDL_RenderClear(sdl_renderer);
 
   //Render Wall
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
-  //std::cout << wall.size() <<"\n";
+  SDL_SetRenderDrawColor(sdl_renderer, 255, 0, 0, 255);
   for (int i = 0; i < wall.size(); i++) {
     block.x = wall[i].x * block.w;
     block.y = wall[i].y * block.h;
-    //std::cout << "Wall x: " << block.x <<"\n";
-    //std::cout << "Wall y: " << block.y <<"\n";
     SDL_RenderFillRect(sdl_renderer, &block);
 }
 
   // Render food1
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(sdl_renderer, 255, 223,0,255);
    for (int i = 0; i < food1.size(); i++) {
     block.x = food1[i].x * block.w;
     block.y = food1[i].y * block.h;
-      //std::cout << "Wall x: " << block.x <<"\n";
-      //std::cout << "Wall y: " << block.y <<"\n";
     SDL_RenderFillRect(sdl_renderer, &block);
 }
   // Render food2
-  SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0x00, 0xFF);
+  SDL_SetRenderDrawColor(sdl_renderer, 128, 128, 128, 255);
    for (int i = 0; i < food2.size(); i++) {
     block.x = food2[i].x * block.w;
     block.y = food2[i].y * block.h;
-      //std::cout << "Wall x: " << block.x <<"\n";
-      //std::cout << "Wall y: " << block.y <<"\n";
     SDL_RenderFillRect(sdl_renderer, &block);
 }
  
-
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
   for (SDL_Point const &point : snake.body) {
@@ -92,7 +83,6 @@ void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food1,std:
   block.y = static_cast<int>(snake.head_y) * block.h;
   if (snake.alive) {
     SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
-    //std::cout << "Snake Head x: " << block.x <<"\n";
   } else {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
@@ -101,6 +91,7 @@ void Renderer::Render(Snake const snake, std::vector<SDL_Point> const food1,std:
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
+
 
 void Renderer::UpdateWindowTitle(int score, int fps, int moves) {
   std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps) + " Move Counter: " + std::to_string(moves)};
