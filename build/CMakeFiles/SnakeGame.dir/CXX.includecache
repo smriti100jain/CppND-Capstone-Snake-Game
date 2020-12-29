@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/workspace/CppND-Capstone-Snake-Game/src/controller.h
-snake.h
-/home/workspace/CppND-Capstone-Snake-Game/src/snake.h
-memory
--
-
 /home/workspace/CppND-Capstone-Snake-Game/src/food.h
 gameObject.h
 /home/workspace/CppND-Capstone-Snake-Game/src/gameObject.h
@@ -26,46 +20,22 @@ deque
 condition_variable
 -
 
-/home/workspace/CppND-Capstone-Snake-Game/src/game.cpp
-game.h
-/home/workspace/CppND-Capstone-Snake-Game/src/game.h
-iostream
+/home/workspace/CppND-Capstone-Snake-Game/src/gameObject.h
+SDL.h
+/home/workspace/CppND-Capstone-Snake-Game/src/SDL.h
+vector
 -
 thread
 -
-
-/home/workspace/CppND-Capstone-Snake-Game/src/game.h
-food.h
-/home/workspace/CppND-Capstone-Snake-Game/src/food.h
-random
+mutex
 -
-SDL.h
-/home/workspace/CppND-Capstone-Snake-Game/src/SDL.h
-controller.h
-/home/workspace/CppND-Capstone-Snake-Game/src/controller.h
+
+/home/workspace/CppND-Capstone-Snake-Game/src/renderer.cpp
 renderer.h
 /home/workspace/CppND-Capstone-Snake-Game/src/renderer.h
-snake.h
-/home/workspace/CppND-Capstone-Snake-Game/src/snake.h
-mutex
--
-thread
--
 iostream
 -
-wall_obstacle.h
-/home/workspace/CppND-Capstone-Snake-Game/src/wall_obstacle.h
-future
--
-
-/home/workspace/CppND-Capstone-Snake-Game/src/gameObject.h
-SDL.h
-/home/workspace/CppND-Capstone-Snake-Game/src/SDL.h
-vector
--
-thread
--
-mutex
+string
 -
 
 /home/workspace/CppND-Capstone-Snake-Game/src/renderer.h
@@ -81,12 +51,6 @@ snake.h
 /home/workspace/CppND-Capstone-Snake-Game/src/snake.h
 vector
 -
-SDL.h
-/home/workspace/CppND-Capstone-Snake-Game/src/SDL.h
-
-/home/workspace/CppND-Capstone-Snake-Game/src/wall_obstacle.h
-gameObject.h
-/home/workspace/CppND-Capstone-Snake-Game/src/gameObject.h
 SDL.h
 /home/workspace/CppND-Capstone-Snake-Game/src/SDL.h
 
