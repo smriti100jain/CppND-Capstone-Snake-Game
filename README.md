@@ -7,9 +7,12 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 # GAME Features
 
 + **GAME Controls**
+
   + Press 'q' to quit the game
+
 		+ Press 'SPACE' to pause the game
 + **Game Features**
+
 		+ Moving Red Obstacle. If snake touches it, game is aborted.
 
 		+ Multiple number of foods. Currently fixed to two kinds of food. (yellow food with score 4 and grey food with score 1)
@@ -18,14 +21,19 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 
 		+ There is a possibility to pause the game, then continue after some time or start a new game with a new player. You can also quit the game with 'q'.
 + **User Input**
+
 		+ Before starting the game, the console asks for following information:
+
 				+ challenge level (1 or 3 or 5)
+
 						+ it is used to define the size of the red obstacle and speed of the moving obstacle and the food.
+
 				+ player name
+
 						+ player name is used to retreive last score for that player.
 
 						+ in the end of the game, the player details with highest score is updated in the database.
-						
+
 						+ it is also used to promt the "congratulation" message if highest score is achieved.
 
 # Class Structure
