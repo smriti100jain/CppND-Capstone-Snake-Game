@@ -6,22 +6,22 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 
 # GAME Features
 
-+ GAME Controls
-  + Press 'q' to quit the game
-		+ Press 'SPACE' to pause the game
-+ Game Features
-		+ Moving Red Obstacle. If snake touches it, game is aborted.
-		+ Multiple number of foods. Currently fixed to two kinds of food. (yellow food with score 4 and grey food with score 1)
-		+ Growing snake
-		+ There is a possibility to pause the game, then continue after some time or start a new game with a new player. You can also quit the game with 'q'.
-+ User Input
-		+ Before starting the game, the console asks for following information:
-				+ challenge level (1 or 3 or 5)
+* **GAME Controls**
+  * Press 'q' to quit the game
+		* Press 'SPACE' to pause the game
+* **Game Features**
+		* Moving Red Obstacle. If snake touches it, game is aborted.
+		* Multiple number of foods. Currently fixed to two kinds of food. (yellow food with score 4 and grey food with score 1)
+		* Growing snake
+		* There is a possibility to pause the game, then continue after some time or start a new game with a new player. You can also quit the game with 'q'.
+* **User Input**
+		* Before starting the game, the console asks for following information:
+				* challenge level (1 or 3 or 5)
 						+ it is used to define the size of the red obstacle and speed of the moving obstacle and the food.
-				+ player name
-						+ player name is used to retreive last score for that player.
-						+ in the end of the game, the player details with highest score is updated in the database.
-						+ it is also used to promt the "congratulation" message if highest score is achieved.
+				* player name
+						* player name is used to retreive last score for that player.
+						* in the end of the game, the player details with highest score is updated in the database.
+						* it is also used to promt the "congratulation" message if highest score is achieved.
 
 # Class Structure
 
@@ -47,11 +47,11 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 # Rubrics Metric
 + **Loops, Functions, I/O**
 
-	+ Code demonstrates the understanding of C++ functions and control structures. A lot of functions are added in resource_manager.cpp, wall_obstacle.cpp, players_database.cpp. A lot of control structures are also used like a while loop in UpdateWall function of wall_obstacle.cpp, almost all the functions of players_database.cpp.
+	* Code demonstrates the understanding of C++ functions and control structures. A lot of functions are added in resource_manager.cpp, wall_obstacle.cpp, players_database.cpp. A lot of control structures are also used like a while loop in UpdateWall function of wall_obstacle.cpp, almost all the functions of players_database.cpp.
 
-	+ Code accepts user input as added in resource_manager.cpp (like challenge level, player name). It also accepts 'q' key press and 'space' key press to quit or pause the game respectively.
+	* Code accepts user input as added in resource_manager.cpp (like challenge level, player name). It also accepts 'q' key press and 'space' key press to quit or pause the game respectively.
 
-	+ Code reads data from a file and process data and writes data to the file as can be seend in add_player_best_score, is_high_score, write_players_data, load_players_data functions of the players_database.cpp.
+	* Code reads data from a file and process data and writes data to the file as can be seend in add_player_best_score, is_high_score, write_players_data, load_players_data functions of the players_database.cpp.
 
 + **Object Oriented Programming**
 
@@ -69,15 +69,15 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 
 + **Memory Management**
 
-	+ Project use smart pointers (line 30 game.h = std::unique_ptr<FoodObj>).
+	* Project use smart pointers (line 30 game.h = std::unique_ptr<FoodObj>).
 
-	+ Project use references in function declaration (line 63 wall_obstacle.cpp).
+	* Project use references in function declaration (line 63 wall_obstacle.cpp).
 
 + **Concurrency**
 
-	+ Project uses multithreading (line 75 in wall_obstacle.cpp)
+	* Project uses multithreading (line 75 in wall_obstacle.cpp)
 
-	+ Project uses mutex (line 107, 94 in wall_obstacle.cpp)
+	* Project uses mutex (line 107, 94 in wall_obstacle.cpp)
 
 
 
