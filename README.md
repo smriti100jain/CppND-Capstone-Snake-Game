@@ -26,33 +26,57 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 # Class Structure
 
 + resource_manager [manager for all other classes. It start the game, pause, resets the game, ask for user input, displays game state and player related features ]
+
 + players_database  [ Read and writes players history (rank, best score, name). Prompts high score congratulations messages. ]
+
 + controller  [Interacts with user using keyboard. Lets user move the snake. Lets user pause or quit the game]
+
 + render [renders game(game objects, snake, scores) on the screen.]
+
 + game [stores game state. responsible for smoothly running the game.]
+
 + snake [ holds snake size, position ]
+
 + gameObject [super class for all game objects]
+
 	+ food [runs simulation for food object. stores position of the food.]
+
 	+ wall_obstacle [runs simulation for wall obstacle object. Stores it real time position.]
 
 
 # Rubrics Metric
 + Loops, Functions, I/O
+
 	+ Code demonstrates the understanding of C++ functions and control structures. A lot of functions are added in resource_manager.cpp, wall_obstacle.cpp, players_database.cpp. A lot of control structures are also used like a while loop in UpdateWall function of wall_obstacle.cpp, almost all the functions of players_database.cpp.
+
 	+ Code accepts user input as added in resource_manager.cpp (like challenge level, player name). It also accepts 'q' key press and 'space' key press to quit or pause the game respectively.
+
 	+ Code reads data from a file and process data and writes data to the file as can be seend in add_player_best_score, is_high_score, write_players_data, load_players_data functions of the players_database.cpp.
+
 +Object Oriented Programming
+
 	+game_manager.cpp class to manage the running of game, user input/output, data base handling is an example of oop behaviour.
+
 	+there is a overloaded simulate(), simulate(std::vector<SDL_Point> const  &snake_body) in food.h.
+
 	+The classes uses proper access specifier. Class objects communicates with memebes by setters and getters [eg: setting in line 133 resource_manager.cpp = game.set_game_state(GameState::running) for setting game state to running to continue the game. AND getter in line 96 (*it)->get_score() to get score from the food object.].
+
 	+ class constructors utilize member initialization list (eg: food.cpp[around line 9], wall_obstacle.cpp [line 7 to 10])
+
 	+ Classes follow an appropriate inheritance hierarchy [food.h and wall_obstacle.h  are inherited from gameObject]
+
 	+ derived class functions override virtual base class functions (as seen in virtual simulate() function in gameObject.cpp and wall_obstacle.cpp).
+
 +Memory Management
+
 	+Project use smart pointers (line 30 game.h = std::unique_ptr<FoodObj>).
+
 	+Project use references in function declaration (line 63 wall_obstacle.cpp).
+
 +Concurrency
+
 	+Project uses multithreading (line 75 in wall_obstacle.cpp)
+
 	+Project uses mutex (line 107, 94 in wall_obstacle.cpp)
 
 
