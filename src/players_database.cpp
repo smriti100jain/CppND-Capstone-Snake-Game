@@ -1,20 +1,4 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <fstream>
-#include <dirent.h>
-#include <unistd.h>
-#include <sstream>
-#include <algorithm>
-#include <bits/stdc++.h>
-#include <functional>
-#include <set>
 #include "players_database.h"
-
-using std::string;
-using std::vector;
-
-//-------------------------------------------------------------------------------------------//
 
 players_database::players_database(){
   load_players_data();

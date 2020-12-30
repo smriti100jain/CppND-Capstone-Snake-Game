@@ -91,7 +91,9 @@ void resource_manager::display_player_score(int score, int size){
 
   std::cout << "Size: " << size << "\n";
   std::cout << "Current Score: " << score << "\n";
-  std::cout << "Best Rank: " << database.get_stored_player_rank(player_name) << "\n";
+  int best_rank = database.get_stored_player_rank(player_name);
+  if (best_rank !=0){
+  std::cout << "Best Rank: " << best_rank << "\n";}
   if (database.is_high_score(score)){
   	std::cout << "......Congratulations: You have a new high score ......... \n";
       std::cout << "------------------------------------------------------------------- \n";

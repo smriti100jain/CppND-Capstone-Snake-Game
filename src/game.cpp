@@ -2,7 +2,7 @@
 #include <iostream>
 #include <thread>
 Game::Game(std::size_t grid_width, std::size_t grid_height, int difficulty)
-    : snake(grid_width, grid_height),
+    : snake(grid_width, grid_height, difficulty),
       wall(grid_width, grid_height, difficulty){
         _foods.emplace_back(std::make_unique<FoodObj>(grid_width, grid_height, 4));
         _foods.emplace_back(std::make_unique<FoodObj>(grid_width, grid_height, 1));
@@ -36,29 +36,20 @@ GameState Game::Run(Controller  &controller, Renderer &renderer,
 
 
     frame_start = SDL_GetTicks();
-
     // Input, Update, Render - the main game loop.
     controller.HandleInput(game_state, snake);
     Update();
     renderer.Render(snake, _foods[0]->get_game_object(), _foods[1]->get_game_object(), wall.get_game_object());
-
     frame_end = SDL_GetTicks();
 
-    // Keep track of how long each loop through the input/update/render cycle
-    // takes.
     frame_count++;
     frame_duration = frame_end - frame_start;
-
-    // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
       renderer.UpdateWindowTitle(score, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
-
-    // If the time for this frame is too small (i.e. frame_duration is
-    // smaller than the target ms_per_frame), delay the loop to
-    // achieve the correct frame rate.
+    
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
     }
@@ -72,31 +63,23 @@ GameState Game::Run(Controller  &controller, Renderer &renderer,
 
 void Game::Update() {
   
-
-  for (auto const &block : wall.get_game_object())        //check to see if the snake's body hit the wall, if so the game is over
+  // game over if snake touch the obstacle.................
+  for (auto const &block : wall.get_game_object())        
     {
       for (auto const &item : snake.body)
-      {
-        //std::cout<< "wall (x,y): (" << block.x <<", " << block.y << ")\n";
-        //std::cout<< "snake (x,y): (" << item.x <<", " << item.y << ")\n";
+      { 
         if(block.x == item.x && block.y == item.y) 
         {
           snake.alive = false;
         }
       }
-
-      //std::cout<< "wall (x,y): (" << block.x <<", " << block.y << ")\n";
-      //std::cout<< "snake head (x,y): (" << static_cast<int>(snake.head_x) <<", " << static_cast<int>(snake.head_y) << ")\n";
-      if (block.x == static_cast<int>(snake.head_x) && block.y == static_cast<int>(snake.head_y)) //check to see if snake's head hit the wall
+      if (block.x == static_cast<int>(snake.head_x) && block.y == static_cast<int>(snake.head_y)) 
       {
         snake.alive = false;
       }
     }
-
     if (!snake.alive) return;
-
     snake.Update();
-
     int new_x = static_cast<int>(snake.head_x);
     int new_y = static_cast<int>(snake.head_y);
 

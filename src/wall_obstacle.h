@@ -19,7 +19,7 @@ class wall_obstacle : public game_object
   		float head_x;
   		float head_y;
   		int difficulty {0};
-        float speed {0.1f};
+        float speed {0.2f};
         int grid_width;
     	int grid_height;
         int _wallLength;

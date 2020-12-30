@@ -1,2 +1,2 @@
-1 red 1
-2 smriti 0
+1 smriti 5
+2 tina 12

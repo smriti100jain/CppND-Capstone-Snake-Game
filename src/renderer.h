@@ -18,8 +18,6 @@ class Renderer {
   SDL_Window *sdl_window;
   SDL_Renderer *sdl_renderer;
 
-  //SDL_Window *sdl_window_2;
-  //SDL_Renderer *sdl_renderer_2;
 
   const std::size_t screen_width;
   const std::size_t screen_height;
