@@ -14,6 +14,7 @@ class FoodObj : public game_object
 		void simulate() override;
         virtual std::vector<SDL_Point> get_game_object() override;
         void simulate(std::vector<SDL_Point> const  &snake_body);
+        int get_score();
 	private:
 		int _numFood{1};
         int grid_width;

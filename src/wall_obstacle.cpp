@@ -6,8 +6,8 @@
 
 wall_obstacle::wall_obstacle(std::size_t grid_width, std::size_t grid_height, int challenge) :
  	head_x(0),
-  	head_y(0), grid_width(grid_width),grid_height(grid_height),_wallLength(grid_width/2),
-  	difficulty(challenge) {
+  	head_y(0), grid_width(grid_width),grid_height(grid_height),_wallLength(grid_width/challenge),
+  	difficulty(challenge), direction(Direction::kRight) {
 
   for (int i = 0; i < _wallLength; i ++)  
     {

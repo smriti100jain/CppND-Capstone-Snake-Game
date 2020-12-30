@@ -9,7 +9,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/workspace/CppND-Capstone-Snake-Game/src/game.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/game.cpp.o"
   "/home/workspace/CppND-Capstone-Snake-Game/src/gameObject.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/gameObject.cpp.o"
   "/home/workspace/CppND-Capstone-Snake-Game/src/main.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/main.cpp.o"
+  "/home/workspace/CppND-Capstone-Snake-Game/src/players_database.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/players_database.cpp.o"
   "/home/workspace/CppND-Capstone-Snake-Game/src/renderer.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/renderer.cpp.o"
+  "/home/workspace/CppND-Capstone-Snake-Game/src/resource_manager.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o"
   "/home/workspace/CppND-Capstone-Snake-Game/src/snake.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/snake.cpp.o"
   "/home/workspace/CppND-Capstone-Snake-Game/src/wall_obstacle.cpp" "/home/workspace/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/wall_obstacle.cpp.o"
   )
