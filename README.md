@@ -1,12 +1,31 @@
 # CPPND: Capstone Snake Game Example
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This is a Snake Game repository for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
 <img src="snake_game.gif"/>
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+# GAME Features
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
++ GAME Controls
+  + Press 'q' to quit the game
+		+ Press 'SPACE' to pause the game
++ Game Features
+		+ Moving Red Obstacle. If snake touches it, game is aborted.
+		+ Multiple number of foods. Currently fixed to two kinds of food. (yellow food with score 4 and grey food with score 1)
+		+ Growing snake
+		+ There is a possibility to pause the game, then continue after some time or start a new game with a new player. You can also quit the game with 'q'.
++ User Input
+		+ Before starting the game, the console asks for following information:
+				+ challenge level (1 or 3 or 5)
+						+ it is used to define the size of the red obstacle and speed of the moving obstacle and the food.
+				+ player name
+						+ player name is used to retreive last score for that player.
+						+ in the end of the game, the player details with highest score is updated in the database.
+						+ it is also used to promt the "congratulation" message if highest score is achieved.
+
+# Implementation Details
+
+
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
