@@ -11,25 +11,24 @@
 #include <iostream>
 #include "wall_obstacle.h"
 #include <future>
-
+#include "game_state.h"
 class Game {
  public:
   Game(std::size_t grid_width, std::size_t grid_height, int difficulty);
   ~Game();
-  void Run(Controller  &controller, Renderer &renderer,
+  GameState Run(Controller  &controller, Renderer &renderer,
            std::size_t target_frame_duration);
+  void reset_game();
   int GetScore() const;
   int GetSize() const;
-  int GetMoves() const;
+  void set_game_state(GameState state);
   
 
  private:
   Snake snake;
   wall_obstacle wall;// = std::make_unique<Wall>();
-  FoodObj food_;
   std::vector<std::unique_ptr<FoodObj>> _foods;
-  bool running = true;
-  int moves {0};
+  GameState game_state{GameState::running};
   int score{0};
   void Update();
 };

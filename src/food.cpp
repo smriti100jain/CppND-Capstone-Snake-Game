@@ -17,7 +17,9 @@ FoodObj::FoodObj(std::size_t grid_width, std::size_t grid_height,  int score) :
 }
 
 
-
+int FoodObj::get_score(){
+  return score;
+}
 bool in_snake(std::vector<SDL_Point> body, int x, int y){
 
   for(SDL_Point const &item : body) {

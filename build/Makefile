@@ -258,6 +258,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/players_database.o: src/players_database.cpp.o
+
+.PHONY : src/players_database.o
+
+# target to build an object file
+src/players_database.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/players_database.cpp.o
+.PHONY : src/players_database.cpp.o
+
+src/players_database.i: src/players_database.cpp.i
+
+.PHONY : src/players_database.i
+
+# target to preprocess a source file
+src/players_database.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/players_database.cpp.i
+.PHONY : src/players_database.cpp.i
+
+src/players_database.s: src/players_database.cpp.s
+
+.PHONY : src/players_database.s
+
+# target to generate assembly for a file
+src/players_database.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/players_database.cpp.s
+.PHONY : src/players_database.cpp.s
+
 src/renderer.o: src/renderer.cpp.o
 
 .PHONY : src/renderer.o
@@ -284,6 +311,33 @@ src/renderer.s: src/renderer.cpp.s
 src/renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/renderer.cpp.s
 .PHONY : src/renderer.cpp.s
+
+src/resource_manager.o: src/resource_manager.cpp.o
+
+.PHONY : src/resource_manager.o
+
+# target to build an object file
+src/resource_manager.cpp.o:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o
+.PHONY : src/resource_manager.cpp.o
+
+src/resource_manager.i: src/resource_manager.cpp.i
+
+.PHONY : src/resource_manager.i
+
+# target to preprocess a source file
+src/resource_manager.cpp.i:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.i
+.PHONY : src/resource_manager.cpp.i
+
+src/resource_manager.s: src/resource_manager.cpp.s
+
+.PHONY : src/resource_manager.s
+
+# target to generate assembly for a file
+src/resource_manager.cpp.s:
+	$(MAKE) -f CMakeFiles/SnakeGame.dir/build.make CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.s
+.PHONY : src/resource_manager.cpp.s
 
 src/snake.o: src/snake.cpp.o
 
@@ -363,9 +417,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/players_database.o"
+	@echo "... src/players_database.i"
+	@echo "... src/players_database.s"
 	@echo "... src/renderer.o"
 	@echo "... src/renderer.i"
 	@echo "... src/renderer.s"
+	@echo "... src/resource_manager.o"
+	@echo "... src/resource_manager.i"
+	@echo "... src/resource_manager.s"
 	@echo "... src/snake.o"
 	@echo "... src/snake.i"
 	@echo "... src/snake.s"

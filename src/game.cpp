@@ -1,7 +1,6 @@
 #include "game.h"
 #include <iostream>
 #include <thread>
-
 Game::Game(std::size_t grid_width, std::size_t grid_height, int difficulty)
     : snake(grid_width, grid_height),
       wall(grid_width, grid_height, difficulty){
@@ -9,10 +8,15 @@ Game::Game(std::size_t grid_width, std::size_t grid_height, int difficulty)
         _foods.emplace_back(std::make_unique<FoodObj>(grid_width, grid_height, 1));
 
 }
-
+void Game::reset_game(){
+  game_state=GameState::running;
+  score = 0;
+}
 Game::~Game(){};
-
-void Game::Run(Controller  &controller, Renderer &renderer,
+void Game::set_game_state(GameState state){
+  game_state = state;
+}
+GameState Game::Run(Controller  &controller, Renderer &renderer,
                std::size_t target_frame_duration) {
   Uint32 title_timestamp = SDL_GetTicks();
   Uint32 frame_start;
@@ -23,20 +27,18 @@ void Game::Run(Controller  &controller, Renderer &renderer,
 
   //initiate threads to simulate game objects (wall obstacle and food)
   wall.simulate();  
-  food_.simulate(snake.body);
   for (auto it = std::begin(_foods); it != std::end(_foods); ++it){
     (*it)->simulate(snake.body);
   }
   
 
-  while (running) {
+  while (game_state==GameState::running) {
 
 
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInput(running, snake);
-    moves = controller.GetKeyMove();
+    controller.HandleInput(game_state, snake);
     Update();
     renderer.Render(snake, _foods[0]->get_game_object(), _foods[1]->get_game_object(), wall.get_game_object());
 
@@ -49,7 +51,7 @@ void Game::Run(Controller  &controller, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count, moves);
+      renderer.UpdateWindowTitle(score, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -61,10 +63,9 @@ void Game::Run(Controller  &controller, Renderer &renderer,
       SDL_Delay(target_frame_duration - frame_duration);
     }
 
-    if(!snake.alive) running = false;
+    if(!snake.alive) game_state = GameState::dead;
   }
-//   wall.KillThread();
- 
+  return game_state;
 }
 
 
@@ -110,6 +111,7 @@ void Game::Update() {
           }}
         if(eaten>0){
             (*it)->simulate(snake.body);
+          	score = score + (*it)->get_score();
         }
         for(auto i=0; i<eaten;i++){
             // Grow snake and increase speed for every eaten food.
@@ -122,4 +124,3 @@ void Game::Update() {
 
 int Game::GetScore() const { return score; }
 int Game::GetSize() const { return snake.size; }
-int Game::GetMoves() const {return moves; }
