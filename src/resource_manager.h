@@ -7,16 +7,17 @@
 #include <chrono>
 #include <limits>
 #include "game_state.h"
-//#include "players_database"
+#include "players_database.h"
 
 class resource_manager
 {
 	public:
     	resource_manager();
+        ~resource_manager();
         void run_game();
         
 	private:
-    	void pause_game();
+    	int pause_game();
         int quit_game();
         void game_over();
 		void initialize_new_game();
@@ -24,10 +25,10 @@ class resource_manager
         std::string get_player_name();
         void display_player_existing_profile();
         int get_challenge_level();
-        void display_player_score();
+        void display_player_score(int, int);
 
         std::string player_name;
-        //players_database database;
+        players_database database;
         int challenge;
         std::size_t kFramesPerSecond{60};
         std::size_t kMsPerFrame{1000 / kFramesPerSecond};

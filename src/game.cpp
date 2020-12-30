@@ -107,7 +107,6 @@ void Game::Update() {
         for (auto const &food : (*it)->get_game_object()){
           if (food.x == new_x && food.y == new_y) {
             eaten +=1;
-            score+ = 1;
           }}
         if(eaten>0){
             (*it)->simulate(snake.body);

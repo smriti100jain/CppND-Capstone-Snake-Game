@@ -201,6 +201,7 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/game.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/gameObject.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/game_state.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/players_database.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/renderer.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/resource_manager.h
 CMakeFiles/SnakeGame.dir/src/main.cpp.o: ../src/snake.h
@@ -306,6 +307,7 @@ CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/food.h
 CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/game.h
 CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/gameObject.h
 CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/game_state.h
+CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/players_database.h
 CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/renderer.h
 CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/resource_manager.cpp
 CMakeFiles/SnakeGame.dir/src/resource_manager.cpp.o: ../src/resource_manager.h
