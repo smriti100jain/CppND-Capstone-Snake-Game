@@ -4,6 +4,7 @@
 CMakeFiles/SnakeGame.dir/src/controller.cpp.o
  /home/workspace/CppND-Capstone-Snake-Game/src/controller.cpp
  /home/workspace/CppND-Capstone-Snake-Game/src/controller.h
+ /home/workspace/CppND-Capstone-Snake-Game/src/game_state.h
  /home/workspace/CppND-Capstone-Snake-Game/src/snake.h
  /usr/include/SDL2/SDL.h
  /usr/include/SDL2/SDL_assert.h
@@ -101,6 +102,7 @@ CMakeFiles/SnakeGame.dir/src/game.cpp.o
  /home/workspace/CppND-Capstone-Snake-Game/src/game.cpp
  /home/workspace/CppND-Capstone-Snake-Game/src/game.h
  /home/workspace/CppND-Capstone-Snake-Game/src/gameObject.h
+ /home/workspace/CppND-Capstone-Snake-Game/src/game_state.h
  /home/workspace/CppND-Capstone-Snake-Game/src/renderer.h
  /home/workspace/CppND-Capstone-Snake-Game/src/snake.h
  /home/workspace/CppND-Capstone-Snake-Game/src/wall_obstacle.h
@@ -198,6 +200,7 @@ CMakeFiles/SnakeGame.dir/src/main.cpp.o
  /home/workspace/CppND-Capstone-Snake-Game/src/food.h
  /home/workspace/CppND-Capstone-Snake-Game/src/game.h
  /home/workspace/CppND-Capstone-Snake-Game/src/gameObject.h
+ /home/workspace/CppND-Capstone-Snake-Game/src/game_state.h
  /home/workspace/CppND-Capstone-Snake-Game/src/main.cpp
  /home/workspace/CppND-Capstone-Snake-Game/src/renderer.h
  /home/workspace/CppND-Capstone-Snake-Game/src/snake.h
