@@ -68,13 +68,17 @@ This is a Snake Game repository for the Capstone project in the [Udacity C++ Nan
 
 + **Object Oriented Programming**
 
-	* game_manager.cpp class to manage the running of game, user input/output, data base handling is an example of oop behaviour.
+	* The project uses Object Oriented Programming techniques. Eg: food.cpp, wall_obstacle.cpp, players_database.cpp holds class attributes and methods.
+	
+	* Classes use appropriate access specifiers for class members. For eg: 31 in game.h game_state is private because its a property of a game.
 
 	* there is a overloaded simulate(), simulate(std::vector<SDL_Point> const  &snake_body) in food.h.
 
 	* The classes uses proper access specifier. Class objects communicates with memebes by setters and getters [eg: setting in line 133 resource_manager.cpp = game.set_game_state(GameState::running) for setting game state to running to continue the game. AND getter in line 96 (*it)->get_score() to get score from the food object.].
 
-	* class constructors utilize member initialization list (eg: food.cpp[around line 9], wall_obstacle.cpp [line 7 to 10])
+	* Class constructors utilize member initialization lists. (eg: food.cpp[around line 9], wall_obstacle.cpp [line 7 to 10])
+	
+	* Classes encapsulate behavior. Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user.  State is accessed via member functions. game.set_game_state(GameState::running) for setting game state to running to continue the game
 
 	* Classes follow an appropriate inheritance hierarchy [food.h and wall_obstacle.h  are inherited from gameObject]
 
